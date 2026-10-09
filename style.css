@@ -151,3 +151,13 @@ mark.hit.current{background:#ff9f43;box-shadow:0 0 0 3px rgba(255,159,67,.45)}
 .cf-dots button.on{width:22px;border-radius:8px;background:var(--brand)}
 @media (max-width:600px){.coverflow{padding:0 8px}.cf-stage{height:320px}.cf-nav{top:auto;bottom:-6px}.cf-nav.prev{left:8px}.cf-nav.next{right:8px}.cf-dots{margin-top:12px}}
 @media (prefers-reduced-motion:reduce){.cf-item{transition:none}}
+/* Resume: 3D view pane + shloka tag */
+#resume .wrap{perspective:1600px}
+.resume-frame.reveal.in{transform:rotateX(4deg) translateZ(0);transform-origin:50% 0;box-shadow:0 30px 60px rgba(15,27,61,.35),0 12px 24px rgba(47,91,255,.22),0 0 0 1px rgba(255,255,255,.06);transition:transform .6s ease,box-shadow .6s ease}
+.resume-frame.reveal.in:hover{transform:rotateX(0) translateY(-6px);box-shadow:0 40px 80px rgba(15,27,61,.42),0 16px 32px rgba(47,91,255,.30)}
+.shloka{display:flex;justify-content:center;margin:22px auto 4px}
+.shloka-text{position:relative;display:inline-block;padding:10px 30px;border-radius:999px;font-family:"Noto Sans Devanagari","Mukta","Nirmala UI","Kohinoor Devanagari",sans-serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:.02em;color:#0f1b3d;background:linear-gradient(100deg,#fff1a8,#ffe066 40%,#ffb347 70%,#ffe066);background-size:200% 100%;border:2px solid #fff;box-shadow:0 8px 22px rgba(255,159,67,.45),0 0 0 4px color-mix(in srgb,var(--brand) 22%,transparent);animation:shlokaShine 4s linear infinite}
+.shloka-text::before,.shloka-text::after{content:"\2726";position:absolute;top:50%;transform:translateY(-50%);color:var(--brand);font-size:.9rem}
+.shloka-text::before{left:11px}.shloka-text::after{right:11px}
+@keyframes shlokaShine{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.shloka-text{animation:none}.resume-frame.reveal.in{transition:none}}

@@ -102,8 +102,6 @@
       <div class="sec-head"><h2 class="page-heading">Resume &amp; Experience</h2></div>
       <p class="quote center reveal" style="max-width:640px;margin:0 auto;border-left:0;border-radius:12px"><b>"The simpler you say it, the more eloquent it is."</b> - August Wilson</p>
       <div class="resume-frame reveal" id="about">
-        <div class="pdf-bar"><span>Rajan_PY.pdf</span>
-          <button class="btn ghost sm" id="fs" type="button">Full screen</button></div>
         <div class="pdf-stage" id="pdfStage" data-src="image/Rajan_PY.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH">
           <div class="pdf-skeleton" id="pdfWait">Loading resume...</div>
         </div>
@@ -153,6 +151,8 @@
     <img src="image/tree.jpg" alt="Tree">
     <p><b>"The best time to plant a tree was 20 years ago. The second best time is now."</b></p>
     <p style="color:var(--muted)">- Chinese Proverb</p>
+    <div class="shloka"><span class="shloka-text">अतिरूपेण वै सीता अतिगर्वेण रावनः। <br>
+अतिदानं बलिर्दत्त्वा अति सर्वत्र वर्जयेत्॥</span></div>
   </div>
 </main>
 
@@ -263,7 +263,6 @@
       stage.append(f);
     }
     new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { load(); o.disconnect(); } }, { rootMargin: "500px" }).observe(stage);
-    document.getElementById("fs").onclick = () => (document.fullscreenElement ? document.exitFullscreen() : stage.requestFullscreen && stage.requestFullscreen());
   })();
 
   // ---- Album: auto-rotating coverflow ----
