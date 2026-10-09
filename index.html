@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fixed header: stops the page jiggling/scrolling while typing in the search box */
+    .site-header{position:fixed;top:0;left:0;right:0}
+    body{padding-top:var(--hdr,59px)}
+  </style>
 </head>
 <body>
 <div id="progress"></div>
@@ -186,15 +191,45 @@
     hits = []; cur = -1; seen = false;
   }
   
-  function clearSearch() { 
+  // Keep what you are reading in the same place on screen while highlights are added/removed.
+  // (Highlight padding re-wraps lines, which would otherwise make the page seem to jump up.)
+  document.documentElement.style.overflowAnchor = "none";
+  function keepScroll(fn) {
+    const hdr = document.querySelector(".site-header");
+    const py = (hdr ? hdr.getBoundingClientRect().bottom : 0) + 30;
+    let el = document.elementFromPoint(innerWidth / 2, Math.min(py, innerHeight - 1));
+    while (el && el.tagName === "MARK") el = el.parentElement;
+    const before = el ? el.getBoundingClientRect().top : 0;
+    fn();
+    if (el && el.isConnected) {
+      const d = el.getBoundingClientRect().top - before;
+      if (d) window.scrollBy({ top: d, left: 0, behavior: "instant" });
+    }
+  }
+
+  // Header is position:fixed (a sticky header made the browser scroll the page while typing),
+  // so a spacer keeps content below it; compensate scroll if the header height changes.
+  (function () {
+    const hdr = document.querySelector(".site-header"), root = document.documentElement;
+    let h = hdr.offsetHeight; root.style.setProperty("--hdr", h + "px");
+    new ResizeObserver(() => {
+      const nh = hdr.offsetHeight, d = nh - h; if (!d) return;
+      h = nh; root.style.setProperty("--hdr", nh + "px");
+      if (window.scrollY > 0) window.scrollBy({ top: d, left: 0, behavior: "instant" });
+    }).observe(hdr);
+  })();
+
+  function clearSearch() { keepScroll(() => {
     clearMarks(); 
     qInput.value = ""; 
     lastQ = ""; 
     countEl.textContent = ""; 
     searchContainer.classList.remove("active");
-  }
+  }); }
 
-  function search() {
+  function search() { keepScroll(doSearch); }
+
+  function doSearch() {
     const q = qInput.value.trim();
     clearMarks(); lastQ = q; countEl.textContent = "";
 

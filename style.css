@@ -161,3 +161,7 @@ mark.hit.current{background:#ff9f43;box-shadow:0 0 0 3px rgba(255,159,67,.45)}
 .shloka-text::before{left:11px}.shloka-text::after{right:11px}
 @keyframes shlokaShine{to{background-position:-200% 0}}
 @media (prefers-reduced-motion:reduce){.shloka-text{animation:none}.resume-frame.reveal.in{transition:none}}
+
+/* Fixed header (prevents page scroll jiggle while typing in the search box) */
+.site-header{position:fixed;top:0;left:0;right:0}
+body{padding-top:var(--hdr,59px)}
