@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -25,6 +25,7 @@
       <a href="index.html" class="active">Home<span>You are here...</span></a>
       <a href="#album">Album<span>See my photos</span></a>
       <a href="#resume">About Me<span>Go to About Page</span></a>
+      <a href="#organizations">Organizations<span>Where I've worked</span></a>
       <a href="#contact">Contact Me<span>Go to Contact Page</span></a>
     </nav>
     <div class="search">
@@ -70,7 +71,7 @@
       <div class="cards">
         <div class="card mygoal reveal">
           <h3>My Goals</h3>
-          <p id="p">I am always looking for an opportunity to work with a team that runs on clear communication. I try to align myself with a company that I believe in and where I can create positive change. I am always looking to learn more and am open to work on challenging projects. <br><br> Currently, I am working with <b>Cognizant Pvt. Ltd.</b> as an <b>Associate Software Engineer</b>.</p>
+          <p id="p">I am always looking for an opportunity to work with a team that runs on clear communication. I try to align myself with a company that I believe in and where I can create positive change. I am always looking to learn more and am open to work on challenging projects. <br><br> Currently, I am working with <b>Cognizant Pvt. Ltd.</b> as an <b>Sr Software Developer</b>.</p>
         </div>
         <div class="card myskill reveal">
           <h3>My Skillset</h3>
@@ -107,22 +108,58 @@
       <div class="sec-head"><h2 class="page-heading">Resume &amp; Experience</h2></div>
       <p class="quote center reveal" style="max-width:640px;margin:0 auto;border-left:0;border-radius:12px"><b>"The simpler you say it, the more eloquent it is."</b> - August Wilson</p>
       <div class="resume-frame reveal" id="about">
-        <div class="pdf-stage" id="pdfStage" data-src="image/Rajan_PY.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH">
+        <div class="pdf-stage" id="pdfStage" data-src="image/Resume.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH"> <!-Resume File ->
           <div class="pdf-skeleton" id="pdfWait">Loading resume...</div>
         </div>
-        <noscript><p>JavaScript is off. <a href="image/Rajan_PY.pdf">Open the resume PDF</a>.</p></noscript>
-      </div>
-      <div class="pdf-actions">
-        <a class="btn" href="image/Rajan_PY.pdf" target="_blank" rel="noopener">Open full PDF</a>
-        <a class="btn ghost" href="image/Rajan_PY.pdf" download="Rajan Mishra">Download (PDF)</a>
-      </div>
 
-      <h3 class="worked">Worked with..</h3>
+      </div>
+      <!--div class="pdf-actions">
+        <a class="btn" href="image/Resume.pdf" target="_blank" rel="noopener">Open full PDF</a>
+        <a class="btn ghost" href="image/Resume.pdf" download="Rajan Mishra">Download (PDF)</a>
+      </div-->
+
+      <!--h3 class="worked">Worked with..</h3>
       <div class="logos imagewtr reveal">
-        <div class="imagewtc"><img src="image/flex.jpg" alt="Flex"></div>
-        <div class="imagewtc"><img src="image/camp.jpg" alt="Camp"></div>
-        <div class="imagewtc"><img src="image/ver.jpg" alt="Ver"></div>
+        <div class="imagewtc"><img src="image/flex.jpg" alt="Flextronics"></div>
+        <div class="imagewtc"><img src="image/camp.jpg" alt="Campus Component"></div>
+        <div class="imagewtc"><img src="image/ver.jpg" alt="Vervotronics"></div>
         <div class="imagewtc"><img src="image/vce.jpg" alt="VCE"></div>
+      </div-->
+    </div>
+  </section>
+
+  <!-- ORGANIZATIONS -->
+  <section id="organizations">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="page-heading">Organizations I've Worked With</h2></div>
+      <div class="orgs reveal">
+        <!-- To add details for an organization, add <p class="org-role">Job title</p> and <p class="org-period">2021 - 2023</p> after its <h3>. -->
+        <article class="org current">
+          <span class="org-badge">Current</span>
+          <a class="org-logo" href="https://www.cognizant.com" target="_blank" rel="noopener" title="Cognizant"><img src="image/cts.gif" alt="Cognizant logo"></a>
+          <h3>Cognizant</h3>
+          <p class="org-role">Sr Software Developer</p>
+        </article>
+        <article class="org">
+          <div class="org-logo"><img src="image/flex.jpg" alt="Flex logo"></div>
+          <h3>Flextronics</h3>
+     <p class="org-role">Junior Trainee</p>
+        </article>
+        <article class="org">
+          <div class="org-logo"><img src="image/camp.jpg" alt="Camp logo"></div>
+          <h3>Campus Component</h3>
+     <p class="org-role">Intern</p>
+        </article>
+        <article class="org">
+          <div class="org-logo"><img src="image/ver.jpg" alt="Ver logo"></div>
+          <h3>Vervotronics</h3>
+     <p class="org-role">Intern</p>
+        </article>
+        <article class="org">
+          <div class="org-logo"><img src="image/vce.jpg" alt="VCE logo"></div>
+          <h3>VCE</h3>
+     <p class="org-role">Intern</p>
+        </article>
       </div>
     </div>
   </section>
@@ -171,6 +208,30 @@
 <button onclick="topFunction()" id="myBtn1" class="btn" title="Go to top">&#8593; Scroll UP</button>
 
 <div id="lightbox" onclick="this.classList.remove('open')"><button class="x" aria-label="Close">&times;</button><img alt=""></div>
+
+<!-- Chat assistant: collects a message and sends it via the Get in Touch form -->
+<div id="rmChat">
+  <button type="button" class="rm-launch" aria-expanded="false" aria-controls="rmPanel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12z"/></svg>
+    <span>Message Rajan</span>
+  </button>
+  <section class="rm-panel" id="rmPanel" role="dialog" aria-label="Chat with Rajan's assistant" hidden>
+    <div class="rm-head">
+      <img src="image/logo.jpg" alt="">
+      <div class="rm-title"><b>Rajan's assistant</b><span>Passes your message to Rajan</span></div>
+      <button type="button" class="rm-hbtn rm-restart" aria-label="Start over" title="Start over">&#8635;</button>
+      <button type="button" class="rm-hbtn rm-close" aria-label="Close chat" title="Close">&times;</button>
+    </div>
+    <div class="rm-log" role="log" aria-live="polite"></div>
+    <div class="rm-chips"></div>
+    <div class="rm-bar">
+      <textarea class="rm-input" rows="1" maxlength="1500" aria-label="Type your message" placeholder="Type a message"></textarea>
+      <button type="button" class="btn rm-send" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+      </button>
+    </div>
+  </section>
+</div>
 
 <script>
   function openBox(b) {
@@ -242,7 +303,7 @@
 
     const re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: n => (!n.nodeValue.trim() || n.parentElement.closest("header,script,style,textarea,iframe,noscript,#lightbox")) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+      acceptNode: n => (!n.nodeValue.trim() || n.parentElement.closest("header,script,style,textarea,iframe,noscript,#lightbox,#rmChat")) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
     });
     const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => {
@@ -289,7 +350,7 @@
     const stage = document.getElementById("pdfStage"), wait = document.getElementById("pdfWait");
     function load() {
       if (navigator.pdfViewerEnabled === false) {
-        wait.innerHTML = 'Your browser cannot show PDFs inline.<br><a class="btn" href="image/Rajan_PY.pdf" target="_blank" rel="noopener">Open resume PDF</a>';
+        wait.innerHTML = 'Your browser cannot show PDFs inline.<br><a class="btn" href="image/Resume.pdf" target="_blank" rel="noopener">Open resume PDF</a>';
         return;
       }
       const f = document.createElement("iframe");
@@ -356,7 +417,7 @@
     if (e.isIntersecting) links.forEach(a => a.classList.toggle("active",
       a.getAttribute("href") === "#" + e.target.id || (e.target.id === "home" && a.getAttribute("href") === "index.html")));
   }), { rootMargin: "-45% 0px -50% 0px" });
-  ["home", "album", "resume", "contact"].forEach(id => spy.observe(document.getElementById(id)));
+  ["home", "album", "resume", "organizations", "contact"].forEach(id => spy.observe(document.getElementById(id)));
 
   // ---- Reveal on scroll ----
   const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); rv.unobserve(e.target); } }), { threshold: .12 });
@@ -373,5 +434,6 @@
   setTheme(saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
   themeBtn.onclick = () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
 </script>
+<script src="script.js" defer></script>
 </body>
 </html>
